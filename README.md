@@ -79,7 +79,7 @@ def fazer_login(usuario, senha):
 
 O agente identificou uma vulnerabilidade de **SQL Injection (SQLi)** causada pela interpolação direta de dados do usuário na consulta SQL com `f-string`.
 
-![Agente Antigravity realizando a análise de AppSec](assets/Meu-agente-appsec.png)
+![Agente Antigravity realizando a análise de AppSec](assets/meu-agente-appsec.png)
 
 **Por que é perigoso?** Uma entrada manipulada pode alterar a estrutura lógica da consulta, permitindo, em determinadas condições, **contornar a autenticação**. Dependendo da aplicação, da consulta e dos privilégios do banco, também pode haver risco de exposição ou manipulação de dados.
 
@@ -149,13 +149,13 @@ Como profissionais de segurança, não devemos considerar uma vulnerabilidade re
 
 O Antigravity solicitou autorização para consultar backups do editor. A imagem registra opções de autorização pontual, permissões mais amplas ou recusa. **A autorização deve ser concedida apenas quando a ação e seu escopo forem compreendidos.**
 
-![Pedido de permissão do agente durante a reanálise](assets/pedido-de-permissão.png)
+![Pedido de permissão do agente durante a reanálise](assets/pedido-de-permissao.png)
 
 ### 4.2 Resultado da reanálise
 
 A análise exibida pelo agente considerou **mitigada a SQL Injection no trecho revisado**, destacando o uso de placeholders `?` e `cursor.execute(query, (usuario, senha))`. O agente também mencionou tratamento de erros e uma opção de autenticação por hash.
 
-![Resultado da reanálise do agente](assets/verificação-agente.png)
+![Resultado da reanálise do agente](assets/verificacao-agente.png)
 
 **Limite da evidência:** a captura mostra uma **reanálise do código pelo agente**, e não resultados de uma suíte automatizada de testes. Ainda é necessário executar testes funcionais e de regressão para comprovar o comportamento em execução.
 
@@ -179,7 +179,7 @@ Na pasta da skill, organizamos arquivos de instrução e documentação (`SKILL.
 
 Criamos uma base de referência em `agent/knowledge/security-basics.md`. Em seguida, solicitamos ao Antigravity que ampliasse a seção de boas práticas de segurança e desenvolvimento seguro.
 
-![Antigravity aprimorando a memória de segurança](assets/memoria%20da%20IA.png)
+![Antigravity aprimorando a memória de segurança](assets/memoria-da-ia.png)
 
 O agente apresentou uma atualização com fundamentos como **atualizações e patches, autenticação forte, menor privilégio, monitoramento e backups, SAST/DAST/SCA, consultas parametrizadas, validação de entradas, gestão de segredos e tratamento seguro de exceções**.
 
